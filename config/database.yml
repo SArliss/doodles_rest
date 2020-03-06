@@ -2,8 +2,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: doodles_rest
-  pool: 5
+  database: doodles_rest_development
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: sinaraarliss
   password:
   timeout: 5000
@@ -12,8 +12,8 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: doodles_rest
-  pool: 5
+  database: doodles_rest_test
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: sinaraarliss
   password:
   timeout: 5000
