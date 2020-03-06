@@ -1,6 +1,12 @@
 class DoodlesController < ApplicationController
   #before_action :set_user, only: [:create, :update, :destroy, :private_doodles]
-  skip_before_action :authorize_request, only: [:public_doodles, :public_doodles_by_category]
+  skip_before_action :authorize_request, only: [:welcome, :public_doodles, :public_doodles_by_category]
+
+
+  # Welcome root page
+  def welcome
+    json_response('Hello World')
+  end
 
   # GET /categories/:category_id/doodles
   def index

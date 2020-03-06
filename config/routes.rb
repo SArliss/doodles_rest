@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'doodles', to: 'doodles#public_doodles'
   get 'doodles/:category_id', to: 'doodles#public_doodles_by_category'
   get 'user/doodles', to: 'doodles#private_doodles'
-
+  root 'doodles#welcome'
 end
