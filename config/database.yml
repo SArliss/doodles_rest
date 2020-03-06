@@ -1,5 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: doodles_rest_development
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: sinaraarliss
+  password:
+  timeout: 5000
+  host: localhost
 
 development:
+  <<: *default
   adapter: postgresql
   encoding: unicode
   database: doodles_rest_development
@@ -10,9 +20,21 @@ development:
   host: localhost
 
 test:
+  <<: *default
   adapter: postgresql
   encoding: unicode
   database: doodles_rest_test
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: sinaraarliss
+  password:
+  timeout: 5000
+  host: localhost
+
+  production:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: doodles_rest_production
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: sinaraarliss
   password:
